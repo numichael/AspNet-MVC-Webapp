@@ -1,0 +1,25 @@
+@model Register;
+
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <h2> Login</h2>
+        <div class="col">
+            <form asp-controller="Accounts" asp-action="Register" methods="post">
+                    <div asp-validation-summary="All"></div>  
+                <input type="email " asp-for="Email" placeholder="Eamil Address">
+                <br>
+                <input type="password" asp-for="Password" placeholder="Password">
+                <br>
+                <input type="password" asp-for="ConfirmPassword" placeholder="Confirm Password">
+                <br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

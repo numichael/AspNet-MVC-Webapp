@@ -1,0 +1,36 @@
+@model TodoItem;
+
+@{
+    ViewData["Title"] = "Delete Todo Item Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Add todo</p>
+@{
+    if (ViewBag.Success != null)
+    {
+        <div>
+            <p style="color: green;">@ViewBag.Success</p>
+        </div>
+    }
+
+    if (ViewBag.ErrorMessage != null)
+    {
+        <p style="color: red;">@ViewBag.ErrorMessage</p>
+    }
+}
+<h4 style="color: red">Deleting this item would permanently erase it from the database. Are you sure you want to continue?</h4>
+<form asp-controller="Todo" asp-action="DeleteItem" method="post">
+    <div asp-validation-summary="All"></div>
+    <br>
+    <input type="text" asp-for="Id" readonly>
+    <br>
+    <input type="text" asp-for="Name" placeholder="Enter Name of Todo" required>
+    <br>
+    <textarea asp-for="Description" placeholder="Enter Description" cols="30" rows="10" required></textarea>
+    <br>
+    <input type="date" asp-for="DueDate" required>
+    <br>
+    <button type="submit">Delete</button>
+</form>

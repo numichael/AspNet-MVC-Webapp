@@ -1,0 +1,53 @@
+@model TodoItem;
+
+@{
+    ViewData["Title"] = "Todo Item Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Todo Item</p>
+
+@{
+    if (ViewBag.ErrorMessage != null)
+    {
+        <p style="color: red;">@ViewBag.ErrorMessage</p>
+    }
+}
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (Model != null)
+            {
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Description</td>
+                    <td>@Model.DueDate</td>
+                    <td>
+                        <a asp-controller="Todo" asp-action="EditItem" asp-route-id="@Model.Id">
+                            <button>Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Todo" asp-action="DeleteItem" asp-route-id="@Model.Id">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
