@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using webapp.Data;
 using webapp.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using webapp.Data;
 
 namespace webapp
 {
     public class Startup
     {
-        
+
         public string ConnectionString { get; set; }
 
         public Startup(IConfiguration configuration)
@@ -51,15 +51,16 @@ namespace webapp
                 options.SignIn.RequireConfirmedPhoneNumber = false;
             });
 
-                services.ConfigureApplicationCookie(options => {
-                    options.AccessDeniedPath = "/Accounts/AccessDenied";
-                    options.Cookie.Name = "Cookie";
-                    options.Cookie.HttpOnly = true;
-                    options.ExpireTimeSpan = TimeSpan.FromMinutes (720);
-                    options.LoginPath = "/Accounts/Login";
-                    options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
-                    options.SlidingExpiration= true;
-                });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Accounts/AccessDenied";
+                options.Cookie.Name = "Cookie";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
+                options.LoginPath = "/Accounts/Login";
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider svp)
