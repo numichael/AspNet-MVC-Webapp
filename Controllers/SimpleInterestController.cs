@@ -52,7 +52,7 @@ namespace webapp.Controllers
                 if(!ModelState.IsValid) return View();
                 int interest = (int.Parse(model.Price) * 10 * (int.Parse(model.Time)*12)) / 100;
 
-                //ViewBag.Interest = interest;
+                ViewBag.Interest = interest;
 
                 SimpleInterestModel vm = new SimpleInterestModel()
                 {

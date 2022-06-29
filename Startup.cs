@@ -34,6 +34,7 @@ namespace webapp
             services.AddControllersWithViews();
             //configure DbContext with database//
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
             ///////////////////////////////////////////////////////////////FROM HERE//////////////
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
