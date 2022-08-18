@@ -4,16 +4,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using webapp.Models;
+using MetroAttendanceApp.Models;
 
-
-namespace webapp.Controllers
+namespace MetroAttendanceApp.Controllers
 {
     public class AccountsController : Controller
     {
         private readonly ILogger<AccountsController> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+
+        
+        
 
         public AccountsController(
             ILogger<AccountsController> logger, 
@@ -23,8 +25,19 @@ namespace webapp.Controllers
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            
         }
         
+        
+
+        [HttpGet]
+        public IActionResult ListUsers()
+        {
+            var users = _userManager.Users;
+            return View(users);
+        }
+
+
             public IActionResult Login()
             {
                 return View();
@@ -104,7 +117,6 @@ namespace webapp.Controllers
                     return View();
                 }
              }
-
              public async Task<IActionResult> Logout()
              {
                  await _signInManager.SignOutAsync();

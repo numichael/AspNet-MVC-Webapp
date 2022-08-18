@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using webapp.Models;
+using MetroAttendanceApp.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using webapp.Data;
+using MetroAttendanceApp.Data;
 
-namespace webapp
+namespace MetroAttendanceApp
 {
     public class Startup
     {
@@ -22,7 +22,7 @@ namespace webapp
 
         {
             Configuration = configuration;
-            ConnectionString = Configuration.GetConnectionString("DefaultConnectionString");
+            ConnectionString = Configuration.GetConnectionString("MetroAppConnectionString");
         }
 
         public IConfiguration Configuration { get; }

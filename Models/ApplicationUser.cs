@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 
 
-namespace webapp.Models
+namespace MetroAttendanceApp.Models
 {
 
     public class ApplicationUser : IdentityUser

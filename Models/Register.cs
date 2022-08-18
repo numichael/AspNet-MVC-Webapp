@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace webapp.Models
+namespace MetroAttendanceApp.Models
 {
 
 

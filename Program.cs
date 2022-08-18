@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace webapp
+namespace MetroAttendanceApp
 {
     public class Program
     {

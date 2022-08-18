@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\repos\\webapp\\webapp.csproj": {}
+    "C:\\Users\\HP\\repos\\MetroAttendanceApp\\webapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\repos\\webapp\\webapp.csproj": {
+    "C:\\Users\\HP\\repos\\MetroAttendanceApp\\webapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\repos\\webapp\\webapp.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\repos\\MetroAttendanceApp\\webapp.csproj",
         "projectName": "webapp",
-        "projectPath": "C:\\Users\\HP\\repos\\webapp\\webapp.csproj",
+        "projectPath": "C:\\Users\\HP\\repos\\MetroAttendanceApp\\webapp.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\repos\\webapp\\obj\\",
+        "outputPath": "C:\\Users\\HP\\repos\\MetroAttendanceApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,6 +65,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.27, 3.1.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
